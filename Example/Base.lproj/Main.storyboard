@@ -52,7 +52,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Main" id="l0T-wW-KpR"/>
+                    <navigationItem key="navigationItem" title="Main" id="l0T-wW-KpR">
+                        <barButtonItem key="rightBarButtonItem" title="Items" id="HYC-S4-T7J">
+                            <connections>
+                                <segue destination="BDl-JL-ked" kind="show" id="YuJ-LC-MZI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -220,6 +226,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WnP-1w-MlX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1960.8695652173915" y="-558.48214285714278"/>
+        </scene>
+        <!--To Do List View Controller-->
+        <scene sceneID="NXQ-ff-1vm">
+            <objects>
+                <viewController id="BDl-JL-ked" customClass="ToDoListViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TEt-dR-s51">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tfl-lr-DOF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vSh-WT-0Xl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7sp-h7-ejU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3809" y="-558"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
