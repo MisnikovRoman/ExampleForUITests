@@ -17,9 +17,10 @@ class BlueScreen {
     private lazy var label1 = app.staticTexts["Switch 1"]
     private lazy var label2 = app.staticTexts["Switch 2"]
     private lazy var label3 = app.staticTexts["Switch 3"]
-    private lazy var switch1 = app.switches["blue_screen_switch1"]
-    private lazy var switch2 = app.switches["blue_screen_switch2"]
-    private lazy var switch3 = app.switches["blue_screen_switch3"]
+
+    lazy var switch1 = app.switches["blue_screen_switch1"]
+    lazy var switch2 = app.switches["blue_screen_switch2"]
+    lazy var switch3 = app.switches["blue_screen_switch3"]
 
     // Methods
     func checkScreen() {
@@ -40,6 +41,12 @@ class BlueScreen {
         XCTAssertTrue(switch1.isOn)
         XCTAssertFalse(switch2.isOn)
         XCTAssertTrue(switch3.isOn)
+    }
+
+    func toogle(_ switchElement: XCUIElement) {
+        let isExpectedStateOn = switchElement.isOn
+        switchElement.tap()
+        XCTAssertNotEqual(isExpectedStateOn, switchElement.isOn)
     }
 }
 

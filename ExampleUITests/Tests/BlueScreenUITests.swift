@@ -13,6 +13,7 @@ class BlueScreenUITests: XCTestCase {
     private var app = XCUIApplication()
     private let mainScreen = MainScreen()
     private let blueScreen = BlueScreen()
+    private let greenScreen = GreenScreen()
 
     override func setUpWithError() throws {
         continueAfterFailure = false
@@ -30,5 +31,23 @@ class BlueScreenUITests: XCTestCase {
         blueScreen.checkScreen()
         blueScreen.checkComponents()
         blueScreen.checkSwitchesState()
+    }
+
+    func testScreenRouteViaGreenScreen() throws {
+        mainScreen.checkScreen()
+        mainScreen.goGreenScreen()
+
+        greenScreen.checkScreen()
+        greenScreen.goToBlueScreen()
+
+        blueScreen.checkScreen()
+        blueScreen.checkComponents()
+    }
+
+    func testTogglesSwitches() throws {
+        mainScreen.goBlueScreen()
+        blueScreen.toogle(blueScreen.switch1)
+        blueScreen.toogle(blueScreen.switch2)
+        blueScreen.toogle(blueScreen.switch3)
     }
 }
