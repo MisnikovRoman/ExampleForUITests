@@ -16,9 +16,11 @@
 		7CFDA844248253DE00928898 /* MainScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFDA843248253DE00928898 /* MainScreenUITests.swift */; };
 		C81E3310248BFEF900005D09 /* EasyUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = C81E330F248BFEF900005D09 /* EasyUIKit */; };
 		C81E3312248C024E00005D09 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E3311248C024E00005D09 /* ToDoListViewController.swift */; };
+		C878EC99248C17CE00AD3663 /* BlueScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C878EC98248C17CD00AD3663 /* BlueScreen.swift */; };
 		C87B1369248C1085007CB1AE /* RedScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87B1368248C1085007CB1AE /* RedScreenUITests.swift */; };
 		C87B136B248C10C4007CB1AE /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87B136A248C10C4007CB1AE /* MainScreen.swift */; };
 		C87B1370248C126E007CB1AE /* RedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87B136F248C126E007CB1AE /* RedScreen.swift */; };
+		C88D5814248C1A5000441D3E /* BlueScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D5813248C1A5000441D3E /* BlueScreenUITests.swift */; };
 		C893D7F8248C07C900A73FA6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C893D7F7248C07C900A73FA6 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,9 +47,11 @@
 		7CFDA843248253DE00928898 /* MainScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenUITests.swift; sourceTree = "<group>"; };
 		7CFDA845248253DE00928898 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C81E3311248C024E00005D09 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
+		C878EC98248C17CD00AD3663 /* BlueScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueScreen.swift; sourceTree = "<group>"; };
 		C87B1368248C1085007CB1AE /* RedScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedScreenUITests.swift; sourceTree = "<group>"; };
 		C87B136A248C10C4007CB1AE /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		C87B136F248C126E007CB1AE /* RedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedScreen.swift; sourceTree = "<group>"; };
+		C88D5813248C1A5000441D3E /* BlueScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueScreenUITests.swift; sourceTree = "<group>"; };
 		C893D7F7248C07C900A73FA6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +123,7 @@
 			children = (
 				C87B136A248C10C4007CB1AE /* MainScreen.swift */,
 				C87B136F248C126E007CB1AE /* RedScreen.swift */,
+				C878EC98248C17CD00AD3663 /* BlueScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			children = (
 				7CFDA843248253DE00928898 /* MainScreenUITests.swift */,
 				C87B1368248C1085007CB1AE /* RedScreenUITests.swift */,
+				C88D5813248C1A5000441D3E /* BlueScreenUITests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -254,7 +260,9 @@
 				C87B136B248C10C4007CB1AE /* MainScreen.swift in Sources */,
 				C87B1370248C126E007CB1AE /* RedScreen.swift in Sources */,
 				7CFDA844248253DE00928898 /* MainScreenUITests.swift in Sources */,
+				C88D5814248C1A5000441D3E /* BlueScreenUITests.swift in Sources */,
 				C87B1369248C1085007CB1AE /* RedScreenUITests.swift in Sources */,
+				C878EC99248C17CE00AD3663 /* BlueScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

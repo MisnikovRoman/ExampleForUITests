@@ -129,6 +129,7 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1xC-Sn-nvN">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="blue_screen_switch1"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -146,6 +147,7 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dl3-4z-DyP">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="blue_screen_switch2"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -163,6 +165,7 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvH-NC-ird">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="blue_screen_switch3"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
