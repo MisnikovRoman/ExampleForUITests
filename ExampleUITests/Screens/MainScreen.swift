@@ -39,4 +39,8 @@ class MainScreen {
     func goGreenScreen() {
         greenButton.tap()
     }
+
+    func goTodosScreen() {
+        listButton.tap()
+    }
 }

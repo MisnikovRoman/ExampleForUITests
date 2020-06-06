@@ -23,6 +23,8 @@
 		C88D5814248C1A5000441D3E /* BlueScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D5813248C1A5000441D3E /* BlueScreenUITests.swift */; };
 		C88D5818248C1DED00441D3E /* GreenScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D5817248C1DED00441D3E /* GreenScreen.swift */; };
 		C88D581A248C1E6B00441D3E /* GreenScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D5819248C1E6B00441D3E /* GreenScreenUITests.swift */; };
+		C88D581C248C214B00441D3E /* TodosScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D581B248C214B00441D3E /* TodosScreen.swift */; };
+		C88D581E248C21E000441D3E /* TodosScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D581D248C21E000441D3E /* TodosScreenUITests.swift */; };
 		C893D7F8248C07C900A73FA6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C893D7F7248C07C900A73FA6 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		C88D5813248C1A5000441D3E /* BlueScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueScreenUITests.swift; sourceTree = "<group>"; };
 		C88D5817248C1DED00441D3E /* GreenScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenScreen.swift; sourceTree = "<group>"; };
 		C88D5819248C1E6B00441D3E /* GreenScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenScreenUITests.swift; sourceTree = "<group>"; };
+		C88D581B248C214B00441D3E /* TodosScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosScreen.swift; sourceTree = "<group>"; };
+		C88D581D248C21E000441D3E /* TodosScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosScreenUITests.swift; sourceTree = "<group>"; };
 		C893D7F7248C07C900A73FA6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +133,7 @@
 				C87B136F248C126E007CB1AE /* RedScreen.swift */,
 				C878EC98248C17CD00AD3663 /* BlueScreen.swift */,
 				C88D5817248C1DED00441D3E /* GreenScreen.swift */,
+				C88D581B248C214B00441D3E /* TodosScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				C87B1368248C1085007CB1AE /* RedScreenUITests.swift */,
 				C88D5813248C1A5000441D3E /* BlueScreenUITests.swift */,
 				C88D5819248C1E6B00441D3E /* GreenScreenUITests.swift */,
+				C88D581D248C21E000441D3E /* TodosScreenUITests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -270,7 +276,9 @@
 				C88D5818248C1DED00441D3E /* GreenScreen.swift in Sources */,
 				C88D581A248C1E6B00441D3E /* GreenScreenUITests.swift in Sources */,
 				C87B1369248C1085007CB1AE /* RedScreenUITests.swift in Sources */,
+				C88D581E248C21E000441D3E /* TodosScreenUITests.swift in Sources */,
 				C878EC99248C17CE00AD3663 /* BlueScreen.swift in Sources */,
+				C88D581C248C214B00441D3E /* TodosScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
