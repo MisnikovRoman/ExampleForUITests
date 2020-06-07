@@ -24,10 +24,11 @@ class TodosScreenUITests: XCTestCase {
     }
 
     func testScreenComponents() throws {
-        // path to screen
-        mainScreen.goTodosScreen()
-        // checks
-        todosScreen.checkScreen()
+        mainScreen
+            .goTodosScreen()
+        todosScreen
+            .checkScreen()
+            .checkIsLoading()
     }
 
     func testCells() throws {

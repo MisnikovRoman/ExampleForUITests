@@ -14,6 +14,7 @@ class TodosScreen {
 
     // Components
     private lazy var title = app.navigationBars.staticTexts["Todos"]
+    private lazy var loadingLabel = app.staticTexts["Loading"]
     private lazy var firstCell = cell(withName: "Todo 0")
     private lazy var lastCell = cell(withName: "Todo 100")
     private lazy var cells: [XCUIElement] = []
@@ -33,7 +34,8 @@ class TodosScreen {
 
     @discardableResult
     func checkIsLoading() -> Self {
-
+        XCTAssertTrue(loadingLabel.exists)
+        XCTAssertTrue(loadingLabel.isHittable)
         return self
     }
 
@@ -53,15 +55,11 @@ class TodosScreen {
 
     @discardableResult
     func swipeToBottom() -> Self {
-
         for _ in 0..<10 {
-            if lastCell.isHittable {
-                return self
-            }
+            guard !lastCell.isHittable else { return self }
             app.swipeUp()
         }
-        XCTFail()
-
+        XCTFail("Невозможно дойти до последней ячейки за 10 свайпов")
         return self
     }
 }
