@@ -1,10 +1,10 @@
 import XCTest
 
-class RedScreenUITests: XCTestCase {
+class ItemsScreenUITests: XCTestCase {
 
     private let app = XCUIApplication()
     private let navigate = Navigation()
-    private let redScreen = RedScreen()
+    private let itemsScreen = ItemsScreen()
     private lazy var mainScreen = MainScreen()
     
     override func setUpWithError() throws {
@@ -16,16 +16,16 @@ class RedScreenUITests: XCTestCase {
         app.terminate()
     }
     
-    func testRedScreen() {
-        navigate.go(to_distanation: .red)
+    func testItemsScreen() {
+        navigate.go(to_distanation: .items)
         
-        redScreen.checkAllComponents()
+        itemsScreen.checkAllComponents()
     }
     
     func testGoBackToMain() {
-        navigate.go(to_distanation: .red)
+        navigate.go(to_distanation: .items)
         
-        redScreen.goBack()
+        itemsScreen.goBack()
         mainScreen.checkScreen()
     }
 }

@@ -1,6 +1,6 @@
 import XCTest
 
-class Navigation: XCTestCase {
+class Navigation {
     
     private let app = XCUIApplication()
     private let mainScreen = MainScreen()
@@ -9,40 +9,87 @@ class Navigation: XCTestCase {
     private lazy var greenScreen = GreenScreen()
     private lazy var itemsScreen = ItemsScreen()
     
-    override func setUpWithError() throws {
-        continueAfterFailure = false
-        app.launch()
+    func go(to_distanation: Screens) {
+        switch to_distanation {
+        case .main:
+            self.navigateToMainScreen()
+        case .blue:
+            self.navigateToBlueScreen()
+        case .green:
+            self.navigateToGreenScreen()
+        case .red:
+            self.navigateToRedScreen()
+        case .items:
+            self.navigateToItemsScreen()
+        }
+    }
+    
+    func go(to_distanation: Screens, throw_screen: Screens) {
+        switch to_distanation {
+        case .blue:
+            switch throw_screen {
+            case .green:
+                self.navigateToBlueScreenThrowGreenScreen()
+            case .main:
+                self.navigateToBlueScreen()
+            default:
+                XCTFail("Can't go to \(to_distanation) screen throw \(throw_screen)")
+            }
+        case .main:
+            XCTFail("Can't go to \(to_distanation) screen throw \(throw_screen)")
+        case .red:
+            switch throw_screen {
+            case .main:
+                self.navigateToRedScreen()
+            default:
+                XCTFail("Can't go to \(to_distanation) screen throw \(throw_screen)")
+            }
+        case .green:
+            switch throw_screen {
+            case .main:
+                self.navigateToGreenScreen()
+            default:
+                XCTFail("Can't go to \(to_distanation) screen throw \(throw_screen)")
+            }
+        case .items:
+            switch throw_screen {
+            case .main:
+                self.navigateToItemsScreen()
+            default:
+                XCTFail("Can't go to \(to_distanation) screen throw \(throw_screen)")
+            }
+        }
     }
 
-    override func tearDownWithError() throws {
-        app.terminate()
+    private func navigateToMainScreen() {
+        mainScreen.checkScreen()
     }
-
-    func NavigationToItemsScreen() {
+    
+    private func navigateToItemsScreen() {
         mainScreen.checkScreen()
         mainScreen.goItemsScreen()
         itemsScreen.checkScreen()
     }
 
-    func NavigationToRedScreen() {
+    private func navigateToRedScreen() {
         mainScreen.checkScreen()
         mainScreen.goRedScreen()
         redScreen.checkScreen()
     }
     
-    func NavigationToBlueScreen() {
+    private func navigateToBlueScreen() {
         mainScreen.checkScreen()
         mainScreen.goBlueScreen()
         blueScreen.checkScreen()
     }
 
-    func NavigationToGreenScreen() {
+    private func navigateToGreenScreen() {
         mainScreen.checkScreen()
         mainScreen.goGreenScreen()
         greenScreen.checkScreen()
     }
     
-    func NavigationToBlueScreenThrowGreenScreen() {
+    private func navigateToBlueScreenThrowGreenScreen() {
         mainScreen.checkScreen()
         mainScreen.goGreenScreen()
         greenScreen.checkScreen()

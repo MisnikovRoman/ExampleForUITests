@@ -14,6 +14,8 @@
 		7CFDA836248253DE00928898 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CFDA835248253DE00928898 /* Assets.xcassets */; };
 		7CFDA839248253DE00928898 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CFDA837248253DE00928898 /* LaunchScreen.storyboard */; };
 		7CFDA844248253DE00928898 /* MainScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFDA843248253DE00928898 /* MainScreenUITests.swift */; };
+		A99F1EB424927BC0009686DD /* SwitchesOnBlueScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99F1EB324927BC0009686DD /* SwitchesOnBlueScreen.swift */; };
+		A99F1EB72493698A009686DD /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99F1EB62493698A009686DD /* Screens.swift */; };
 		A9E60954248D04A200ED5FA7 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E60950248CFD0800ED5FA7 /* MainScreen.swift */; };
 		A9E60956248E707400ED5FA7 /* RedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E60955248E707400ED5FA7 /* RedScreen.swift */; };
 		A9E60959248FA06600ED5FA7 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E60958248FA06600ED5FA7 /* Navigation.swift */; };
@@ -24,6 +26,7 @@
 		A9E60963248FBD4E00ED5FA7 /* GreenScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E60962248FBD4E00ED5FA7 /* GreenScreenUITests.swift */; };
 		A9E60965248FC29000ED5FA7 /* RedScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E60964248FC29000ED5FA7 /* RedScreenUITests.swift */; };
 		A9E60967248FECD600ED5FA7 /* NavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E60966248FECD600ED5FA7 /* NavigationTests.swift */; };
+		A9E6096A24912D6F00ED5FA7 /* ItemsScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6096924912D6F00ED5FA7 /* ItemsScreenUITests.swift */; };
 		C81E3310248BFEF900005D09 /* EasyUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = C81E330F248BFEF900005D09 /* EasyUIKit */; };
 		C81E3312248C024E00005D09 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E3311248C024E00005D09 /* ToDoListViewController.swift */; };
 		C893D7F8248C07C900A73FA6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C893D7F7248C07C900A73FA6 /* LoadingView.swift */; };
@@ -51,6 +54,8 @@
 		7CFDA83F248253DE00928898 /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CFDA843248253DE00928898 /* MainScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenUITests.swift; sourceTree = "<group>"; };
 		7CFDA845248253DE00928898 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A99F1EB324927BC0009686DD /* SwitchesOnBlueScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchesOnBlueScreen.swift; sourceTree = "<group>"; };
+		A99F1EB62493698A009686DD /* Screens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 		A9E60950248CFD0800ED5FA7 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		A9E60955248E707400ED5FA7 /* RedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedScreen.swift; sourceTree = "<group>"; };
 		A9E60958248FA06600ED5FA7 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 		A9E60962248FBD4E00ED5FA7 /* GreenScreenUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenScreenUITests.swift; sourceTree = "<group>"; };
 		A9E60964248FC29000ED5FA7 /* RedScreenUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedScreenUITests.swift; sourceTree = "<group>"; };
 		A9E60966248FECD600ED5FA7 /* NavigationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationTests.swift; sourceTree = "<group>"; };
+		A9E6096924912D6F00ED5FA7 /* ItemsScreenUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsScreenUITests.swift; sourceTree = "<group>"; };
 		C81E3311248C024E00005D09 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		C893D7F7248C07C900A73FA6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +135,15 @@
 			path = ExampleUITests;
 			sourceTree = "<group>";
 		};
+		A99F1EB224927B70009686DD /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A99F1EB324927BC0009686DD /* SwitchesOnBlueScreen.swift */,
+				A99F1EB62493698A009686DD /* Screens.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		A9E60952248CFD4500ED5FA7 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +151,9 @@
 				7CFDA843248253DE00928898 /* MainScreenUITests.swift */,
 				A9E6095C248FA6C900ED5FA7 /* BlueScreenUITests.swift */,
 				A9E60962248FBD4E00ED5FA7 /* GreenScreenUITests.swift */,
+				A9E6096924912D6F00ED5FA7 /* ItemsScreenUITests.swift */,
 				A9E60964248FC29000ED5FA7 /* RedScreenUITests.swift */,
+				A99F1EB224927B70009686DD /* Enums */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -274,9 +291,12 @@
 			files = (
 				A9E60954248D04A200ED5FA7 /* MainScreen.swift in Sources */,
 				A9E60956248E707400ED5FA7 /* RedScreen.swift in Sources */,
+				A9E6096A24912D6F00ED5FA7 /* ItemsScreenUITests.swift in Sources */,
 				A9E6095B248FA45000ED5FA7 /* GreenScreen.swift in Sources */,
 				A9E60963248FBD4E00ED5FA7 /* GreenScreenUITests.swift in Sources */,
+				A99F1EB72493698A009686DD /* Screens.swift in Sources */,
 				A9E60967248FECD600ED5FA7 /* NavigationTests.swift in Sources */,
+				A99F1EB424927BC0009686DD /* SwitchesOnBlueScreen.swift in Sources */,
 				A9E6095D248FA6C900ED5FA7 /* BlueScreenUITests.swift in Sources */,
 				A9E60965248FC29000ED5FA7 /* RedScreenUITests.swift in Sources */,
 				7CFDA844248253DE00928898 /* MainScreenUITests.swift in Sources */,

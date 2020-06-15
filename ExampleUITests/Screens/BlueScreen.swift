@@ -13,46 +13,74 @@ class BlueScreen {
     private lazy var title = app.navigationBars.staticTexts["Blue"]
     private lazy var backButtonToMain = app.buttons["Main"]
     private lazy var backButtonToGreen = app.buttons["Green"]
+    private lazy var switchButtonIdTPL = "blue_screen_switch_%number%"
+    private lazy var switchLabelNameTPL = "Switch %number%"
     
-    private lazy var switch1Label = app.staticTexts["Switch 1"]
-    private lazy var switch1Button = app.switches["blue_screen_switch_1"]
-    private lazy var switch1ButtonDefaultValue = "1"
+    private lazy var switchesButtonIsOnDefaultValues = [true, false, true]
     
-    private lazy var switch2Label = app.staticTexts["Switch 2"]
-    private lazy var switch2Button = app.switches["blue_screen_switch_2"]
-    private lazy var switch2ButtonDefaultValue = "0"
+ 
+    private func findSwitchButton(number: String) -> XCUIElement {
+        return app.switches["\(switchButtonIdTPL.replacingOccurrences(of: "%number%", with: "\(number)"))"]
+    }
     
-    private lazy var switch3Label = app.staticTexts["Switch 3"]
-    private lazy var switch3Button = app.switches["blue_screen_switch_3"]
-    private lazy var switch3ButtonDefaultValue = "1"
+    private func findSwitchLabel(number: String) -> XCUIElement {
+        return app.staticTexts["\(switchLabelNameTPL.replacingOccurrences(of: "%number%", with: "\(number)"))"]
+    }
     
+    private func getSwitch(switchName: SwitchesOnBlueScreen) -> XCUIElement {
+        switch switchName {
+        case .switch_1:
+            return self.findSwitchButton(number: "1")
+        case .switch_2:
+            return self.findSwitchButton(number: "2")
+        case .switch_3:
+            return self.findSwitchButton(number: "3")
+        }
+    }
+    
+    private func getSwitchLabel(switchName: SwitchesOnBlueScreen) -> XCUIElement {
+        switch switchName {
+        case .switch_1:
+            return self.findSwitchLabel(number: "1")
+        case .switch_2:
+            return self.findSwitchLabel(number: "2")
+        case .switch_3:
+            return self.findSwitchLabel(number: "3")
+        }
+    }
+    
+    private func getSwitchIsOnDefaultState(switchName: SwitchesOnBlueScreen) -> Bool {
+        switch switchName {
+        case .switch_1:
+            return switchesButtonIsOnDefaultValues[0]
+        case .switch_2:
+            return switchesButtonIsOnDefaultValues[1]
+        case .switch_3:
+            return switchesButtonIsOnDefaultValues[2]
+        }
+    }
     
     func checkScreen() {
         XCTAssertTrue(title.waitForExistence(timeout: 1.0), "Can't find title")
     }
     
-    private func checkAllComponentsExcludeBackButton() {
-        XCTAssertTrue(switch1Label.exists, "Can't find switch 1 label")
-        XCTAssertTrue(switch1Button.exists, "Can't find switch 1 button")
-        XCTAssertTrue(self.getSwitchValue(switchNumber: 1) == switch1ButtonDefaultValue, "Switch 1 in incorrect value")
-        
-        XCTAssertTrue(switch2Label.exists, "Can't find switch 2 label")
-        XCTAssertTrue(switch2Button.exists, "Can't find switch 2 button")
-        XCTAssertTrue(self.getSwitchValue(switchNumber: 2) == switch2ButtonDefaultValue, "Switch 2 in incorrect value")
-        
-        XCTAssertTrue(switch3Label.exists, "Can't find switch 3 label")
-        XCTAssertTrue(switch3Button.exists, "Can't find switch 3 button")
-        XCTAssertTrue(self.getSwitchValue(switchNumber: 3) == switch3ButtonDefaultValue, "Switch 3 in incorrect value")
+    private func checkSwitchAndItsLabel(switchName: SwitchesOnBlueScreen) {
+            XCTAssertTrue(self.getSwitchLabel(switchName: switchName).exists, "Can't find switch '\(switchName)' label")
+            XCTAssertTrue(self.getSwitch(switchName: switchName).exists, "Can't find switch '\(switchName)' button")
+        XCTAssertTrue(self.isSwitchOn(switchName: switchName) == self.getSwitchIsOnDefaultState(switchName: switchName), "Switch '\(switchName)' in incorrect value")
     }
     
-    func checkAllComponentsThenGoFromMain() {
+    func checkAllComponents(isFromMain: Bool) {
+      if isFromMain {
         XCTAssertTrue(backButtonToMain.exists, "Can't find back button")
-        self.checkAllComponentsExcludeBackButton()
-    }
-    
-    func checkAllComponentsThenGoFromGreen() {
+        for switchName in SwitchesOnBlueScreen.allCases { self.checkSwitchAndItsLabel(switchName: switchName)
+        }
+
+      } else {
         XCTAssertTrue(backButtonToGreen.exists, "Can't find back button")
-        self.checkAllComponentsExcludeBackButton()
+        for switchName in SwitchesOnBlueScreen.allCases { self.checkSwitchAndItsLabel(switchName: switchName)
+        }
+      }
     }
     
     func goBack() {
@@ -69,31 +97,39 @@ class BlueScreen {
         XCTAssertTrue(backButton.isHittable, "Back button isn't clicable")
         backButton.tap()
     }
+
     
-    private func defineSwitchByNumber(switchNumber: Int) -> XCUIElement {
-        switch switchNumber {
-        case 1:
-            return switch1Button
-        case 2:
-            return switch2Button
-        case 3:
-            return switch3Button
-        default:
-            fatalError("Unexpected value of switch number")
+    func clickToSwitch(switchName: SwitchesOnBlueScreen) {
+        let switchButton = self.getSwitch(switchName: switchName)
+        XCTAssertTrue(switchButton.isHittable, "Switch '\(switchName)' isn't clicable")
+        switchButton.tap()
+    
+    }
+    
+    func isSwitchOn(switchName: SwitchesOnBlueScreen) -> Bool? {
+        let switchButton = self.getSwitch(switchName: switchName)
+        
+        guard let switchValue = switchButton.value as? String else { return nil }
+        
+        if switchValue == "0" {
+            return false
+        } else if switchValue == "1" {
+            return true
+        } else {
+            XCTFail("Can't convert switch value to bool 'is swich on' param")
+            return nil
         }
     }
     
-    func clickToSwitch(switchNumber: Int) {
-        let switchButton = defineSwitchByNumber(switchNumber: switchNumber)
-        
-        XCTAssertTrue(switchButton.isHittable, "Switch \(switchNumber) isn't clicable")
-        switchButton.tap()
-    }
-    
-    func getSwitchValue(switchNumber: Int) -> String {
-        let switchButton = defineSwitchByNumber(switchNumber: switchNumber)
-        
-        return switchButton.value as! String
+    func checkAllSwitchesChangeAfterClick() {
+        for switchName in SwitchesOnBlueScreen.allCases {
+            let switchValueBeforeClick = self.isSwitchOn(switchName: switchName)
+            self.clickToSwitch(switchName: switchName)
+            let switchValueAfterClick = self.isSwitchOn(switchName: switchName)
+            
+            XCTAssertFalse(switchValueBeforeClick == switchValueAfterClick, "Swich '\(switchName)' didn't chage state after click")
+            
+        }
     }
 }
 

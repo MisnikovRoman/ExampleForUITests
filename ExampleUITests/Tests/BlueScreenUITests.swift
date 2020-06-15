@@ -1,14 +1,15 @@
 import XCTest
 
-class BlueScreenUITests: Navigation {
+class BlueScreenUITests: XCTestCase {
 
     private let app = XCUIApplication()
+    private let navigate = Navigation()
     private let blueScreen = BlueScreen()
     private lazy var mainScreen = MainScreen()
     private lazy var greenScreen = GreenScreen()
     
     override func setUpWithError() throws {
-        continueAfterFailure = true
+        continueAfterFailure = false
         app.launch()
     }
 
@@ -17,60 +18,46 @@ class BlueScreenUITests: Navigation {
     }
     
     func testBlueScreenThrowMainScreen() {
-        super.NavigationToBlueScreen()
+        navigate.go(to_distanation: .blue, throw_screen: .main)
         
-        blueScreen.checkAllComponentsThenGoFromMain()
+        blueScreen.checkAllComponents(isFromMain: true)
     }
     
     func testBlueScreenThrowGreenScreen() {
-        super.NavigationToBlueScreenThrowGreenScreen()
+        navigate.go(to_distanation: .blue, throw_screen: .green)
         
-        blueScreen.checkAllComponentsThenGoFromGreen()
+        blueScreen.checkAllComponents(isFromMain: false)
     }
     
     func testGoBackToMain() {
-        super.NavigationToBlueScreen()
+        navigate.go(to_distanation: .blue, throw_screen: .main)
         
         blueScreen.goBack()
         mainScreen.checkScreen()
     }
     
     func testGoBackToGreen() {
-        super.NavigationToBlueScreenThrowGreenScreen()
+        navigate.go(to_distanation: .blue, throw_screen: .green)
         
         blueScreen.goBack()
         greenScreen.checkScreen()
     }
     
     func testChageAllSwitchStates() {
-        super.NavigationToBlueScreen()
+        navigate.go(to_distanation: .blue)
         
-        for number in 1...3 {
-            let switchValueBeforeClick = blueScreen.getSwitchValue(switchNumber: number)
-            blueScreen.clickToSwitch(switchNumber: number)
-            let switchValueAfterClick = blueScreen.getSwitchValue(switchNumber: number)
-        
-            XCTAssertFalse(switchValueBeforeClick == switchValueAfterClick, "Swich \(number) didn't chage state after click")
-            
-        }
+        blueScreen.checkAllSwitchesChangeAfterClick()
     }
     
     func testBlueScreenAfterChangedSwitchesGoToMainAndGoBack() {
-        super.NavigationToBlueScreen()
+        navigate.go(to_distanation: .blue, throw_screen: .main)
         
-        for number in 1...3 {
-            let switchValueBeforeClick = blueScreen.getSwitchValue(switchNumber: number)
-            blueScreen.clickToSwitch(switchNumber: number)
-            let switchValueAfterClick = blueScreen.getSwitchValue(switchNumber: number)
-        
-            XCTAssertFalse(switchValueBeforeClick == switchValueAfterClick, "Swich \(number) didn't chage state after click")
-            
-        }
+        blueScreen.checkAllSwitchesChangeAfterClick()
         
         blueScreen.goBack()
         mainScreen.checkScreen()
         mainScreen.goBlueScreen()
         blueScreen.checkScreen()
-        blueScreen.checkAllComponentsThenGoFromMain()
+        blueScreen.checkAllComponents(isFromMain: true)
     }
 }

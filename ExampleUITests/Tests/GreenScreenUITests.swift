@@ -1,13 +1,14 @@
 import XCTest
 
-class GreenScreenUITests: Navigation {
+class GreenScreenUITests: XCTestCase {
 
     private let app = XCUIApplication()
+    private let navigate = Navigation()
     private let greenScreen = GreenScreen()
     private lazy var mainScreen = MainScreen()
     
     override func setUpWithError() throws {
-        continueAfterFailure = true
+        continueAfterFailure = false
         app.launch()
     }
 
@@ -16,13 +17,13 @@ class GreenScreenUITests: Navigation {
     }
     
     func testGreenScreen() {
-        super.NavigationToGreenScreen()
+        navigate.go(to_distanation: .green)
         
         greenScreen.checkAllComponents()
     }
     
     func testGoBackToMain() {
-        super.NavigationToGreenScreen()
+        navigate.go(to_distanation: .green)
         
         greenScreen.goBack()
         mainScreen.checkScreen()

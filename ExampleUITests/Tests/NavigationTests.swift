@@ -1,8 +1,9 @@
 import XCTest
 
-class NavigationTests: Navigation {
+class NavigationTests: XCTestCase {
     
     private let app = XCUIApplication()
+    private let navigate = Navigation()
 
     
     override func setUpWithError() throws {
@@ -15,22 +16,22 @@ class NavigationTests: Navigation {
     }
 
     func testNavigationToItemsScreen() {
-        super.NavigationToItemsScreen()
+        navigate.go(to_distanation: .items)
     }
 
     func testNavigationToRedScreen() {
-        super.NavigationToRedScreen()
+        navigate.go(to_distanation: .red)
     }
     
     func testNavigationToBlueScreen() {
-        super.NavigationToBlueScreen()
+        navigate.go(to_distanation: .blue)
     }
 
     func testNavigationToGreenScreen() {
-        super.NavigationToGreenScreen()
+        navigate.go(to_distanation: .green)
     }
     
     func testNavigationToBlueScreenThrowGreenScreen() {
-        super.NavigationToBlueScreenThrowGreenScreen()
+        navigate.go(to_distanation: .blue, throw_screen: .green)
     }
 }

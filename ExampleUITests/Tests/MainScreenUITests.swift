@@ -4,6 +4,7 @@ class MainScreenUITests: XCTestCase {
 
     private let app = XCUIApplication()
     private let mainScreen = MainScreen()
+    private let navigate = Navigation()
     
     override func setUpWithError() throws {
         continueAfterFailure = false
@@ -15,7 +16,7 @@ class MainScreenUITests: XCTestCase {
     }
     
     func testMainScreen() {
-        mainScreen.checkScreen()
+        navigate.go(to_distanation: .main)
         mainScreen.checkAllComponents()
     }
 }
